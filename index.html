@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PT Zona Andalas Mandiri menyediakan solusi outsourcing dan layanan SDM legal, profesional, dan efisien untuk perusahaan di seluruh Indonesia." />
+  <title>PT Zona Andalas Mandiri | Solusi Outsourcing Terpercaya</title>
+  <style>
+    :root {
+      --navy-950: #061427;
+      --navy-900: #0a1f3d;
+      --navy-800: #123665;
+      --blue-600: #1f67cf;
+      --blue-500: #2f79e0;
+      --blue-100: #e9f2ff;
+      --slate-900: #1d2737;
+      --slate-700: #4d5e74;
+      --slate-500: #72849b;
+      --slate-300: #cfd9e8;
+      --slate-200: #dfe7f3;
+      --slate-100: #edf3fb;
+      --white: #ffffff;
+
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow-soft: 0 10px 30px rgba(8, 25, 50, 0.10);
+      --shadow-strong: 0 18px 46px rgba(8, 25, 50, 0.18);
+      --max-width: 1180px;
+      --t: 250ms cubic-bezier(.2,.6,.2,1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--slate-900);
+      line-height: 1.6;
+      background:
+        radial-gradient(1400px 520px at 95% -10%, #dcecff 0%, rgba(220,236,255,0) 50%),
+        linear-gradient(180deg, #ffffff 0%, #f7faff 65%, #f4f8fe 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(92vw, var(--max-width)); margin-inline: auto; }
+    .section { padding: clamp(58px, 8.2vw, 100px) 0; }
+
+    .section-title {
+      font-size: clamp(1.65rem, 1.25rem + 1.45vw, 2.4rem);
+      line-height: 1.2;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle { color: var(--slate-700); max-width: 780px; margin-bottom: 34px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-weight: 700;
+      transition: transform var(--t), box-shadow var(--t), background var(--t), color var(--t);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: linear-gradient(120deg, var(--blue-500), #165fca);
+      box-shadow: 0 12px 26px rgba(31, 103, 207, .32);
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 28px rgba(31, 103, 207, .38); }
+
+    .btn-ghost {
+      background: var(--white);
+      color: var(--navy-800);
+      border: 1px solid var(--slate-300);
+    }
+
+    .btn-ghost:hover { background: #f1f7ff; transform: translateY(-2px); }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      border: 1px solid #c7dcff;
+      color: var(--blue-600);
+      background: #f2f8ff;
+      padding: 8px 14px;
+      font-size: .82rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.87);
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: var(--white);
+      background: linear-gradient(140deg, var(--navy-950), var(--blue-500));
+      box-shadow: var(--shadow-soft);
+    }
+
+    .brand-text strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: .97rem;
+      line-height: 1.2;
+    }
+
+    .brand-text span { color: var(--slate-500); font-size: .77rem; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--slate-700);
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    .nav-links a { position: relative; }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background: var(--blue-500);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--t);
+    }
+
+    .nav-links a:hover { color: var(--blue-600); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--navy-900);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 10px 0 16px;
+      border-top: 1px solid var(--slate-200);
+    }
+
+    .mobile-menu nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      padding: 12px 10px;
+      border-radius: 10px;
+      background: #f4f8ff;
+      color: var(--navy-900);
+      font-weight: 600;
+    }
+
+    .mobile-menu .btn {
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    .mobile-menu.open { display: block; }
+
+    .hero {
+      padding: clamp(70px, 10vw, 120px) 0 68px;
+      overflow: clip;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      width: min(46vw, 520px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      position: absolute;
+      right: -120px;
+      top: -140px;
+      background: radial-gradient(circle, rgba(79,142,227,.28), rgba(79,142,227,0));
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 32px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      color: var(--navy-950);
+      font-size: clamp(1.95rem, 1.15rem + 2.1vw, 3.18rem);
+      line-height: 1.13;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      max-width: 760px;
+    }
+
+    .hero p { color: var(--slate-700); max-width: 730px; margin-bottom: 24px; }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 640px;
+    }
+
+    .trust-item {
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      background: rgba(255,255,255,.72);
+      color: var(--slate-700);
+      font-size: .84rem;
+      padding: 10px 12px;
+      text-align: center;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--slate-200);
+      background: linear-gradient(170deg, #ffffff, #f4f9ff);
+      box-shadow: var(--shadow-strong);
+      padding: 24px;
+    }
+
+    .hero-card h3 { color: var(--navy-900); margin-bottom: 14px; font-size: 1.05rem; }
+
+    .meta-list { list-style: none; display: grid; gap: 10px; }
+    .meta-list li { color: var(--slate-700); display: flex; align-items: flex-start; gap: 8px; font-size: .93rem; }
+    .dot { color: var(--blue-500); margin-top: .05rem; }
+
+    .stats {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 10px;
+    }
+
+    .stat {
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      background: var(--white);
+      text-align: center;
+      padding: 10px;
+    }
+
+    .stat strong { display: block; color: var(--navy-900); font-size: 1.05rem; }
+    .stat span { color: var(--slate-500); font-size: .77rem; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+
+    .card {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      padding: 22px;
+      transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+      min-width: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(8, 25, 50, 0.14);
+      border-color: #c6d8f5;
+    }
+
+    .card h3 { color: var(--navy-900); margin-bottom: 8px; font-size: 1.05rem; }
+    .card p { color: var(--slate-700); font-size: .95rem; }
+
+    .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid #d5e3fa;
+      background: linear-gradient(135deg, #edf5ff, #f8fbff);
+      color: var(--blue-600);
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+    }
+
+    .band {
+      background: linear-gradient(180deg, #f8fbff, #edf4fe);
+      border-top: 1px solid var(--slate-200);
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .bullets { list-style: none; display: grid; gap: 12px; }
+
+    .bullets li {
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      color: var(--slate-700);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 15px;
+    }
+
+    .bullets li::before { content: "✓"; color: var(--blue-500); font-weight: 800; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: flow;
+    }
+
+    .step {
+      border: 1px solid var(--slate-200);
+      border-radius: 14px;
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      padding: 54px 15px 15px;
+      color: var(--slate-700);
+      min-height: 165px;
+    }
+
+    .step::before {
+      counter-increment: flow;
+      content: "Langkah 0" counter(flow);
+      position: absolute;
+      top: 13px;
+      left: 14px;
+      font-size: .77rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--blue-600);
+      font-weight: 700;
+    }
+
+    .segments {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .segment {
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      color: var(--navy-800);
+      text-align: center;
+      font-weight: 600;
+      padding: 15px 10px;
+    }
+
+    .contact {
+      background: linear-gradient(155deg, var(--navy-950), var(--navy-800));
+      color: var(--white);
+      position: relative;
+      overflow: clip;
+    }
+
+    .contact::after {
+      content: "";
+      position: absolute;
+      width: min(56vw, 620px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      right: -170px;
+      bottom: -260px;
+      background: radial-gradient(circle, rgba(79,142,227,.3), rgba(79,142,227,0));
+      pointer-events: none;
+    }
+
+    .contact .section-title,
+    .contact .section-subtitle,
+    .contact h3,
+    .contact li { color: #e8f0ff; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .glass {
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,.09);
+      backdrop-filter: blur(6px);
+      padding: 24px;
+      min-width: 0;
+    }
+
+    .contact-list { list-style: none; display: grid; gap: 12px; margin-top: 14px; }
+
+    footer {
+      background: #031022;
+      color: #bbcae6;
+      padding: 28px 0 34px;
+      text-align: center;
+      font-size: .92rem;
+    }
+
+    footer strong { display: block; color: var(--white); margin-bottom: 4px; }
+
+    @media (max-width: 1200px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { max-width: 720px; }
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links,
+      .nav > .btn { display: none; }
+
+      .menu-toggle { display: inline-grid; place-items: center; }
+
+      .service-grid,
+      .grid-2,
+      .contact-grid,
+      .steps,
+      .segments { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .service-grid,
+      .grid-2,
+      .contact-grid,
+      .steps,
+      .segments,
+      .stats,
+      .trust-grid { grid-template-columns: 1fr; }
+
+      .section { padding: 56px 0; }
+      .hero { padding-top: 64px; }
+      .brand-text span { display: none; }
+      .cta-group { width: 100%; }
+      .btn { width: 100%; }
+    }
+
+    @media (max-width: 380px) {
+      .container { width: min(94vw, var(--max-width)); }
+      .card,
+      .hero-card,
+      .glass { padding: 18px; }
+      .nav { min-height: 68px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" aria-label="Navigasi Utama">
+    <div class="container nav">
+      <a href="#hero" class="brand" aria-label="Beranda PT Zona Andalas Mandiri">
+        <div class="brand-logo">ZA</div>
+        <div class="brand-text">
+          <strong>PT Zona Andalas Mandiri</strong>
+          <span>Outsourcing & Human Resource Services</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Menu Desktop">
+        <a href="#tentang">Tentang</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#keunggulan">Keunggulan</a>
+        <a href="#proses">Alur Kerja</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+
+      <a href="#kontak" class="btn btn-primary">Konsultasi Gratis</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka menu">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="container">
+        <nav aria-label="Menu Mobile">
+          <a href="#tentang">Tentang</a>
+          <a href="#layanan">Layanan</a>
+          <a href="#keunggulan">Keunggulan</a>
+          <a href="#proses">Alur Kerja</a>
+          <a href="#kontak">Kontak</a>
+        </nav>
+        <a href="#kontak" class="btn btn-primary">Konsultasi Gratis</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="chip">Mitra SDM Legal & Terpercaya</span>
+          <h1>Solusi Outsourcing Terpercaya untuk Kebutuhan SDM Anda</h1>
+          <p>PT Zona Andalas Mandiri hadir sebagai mitra outsourcing yang menyediakan tenaga kerja profesional, legal, dan siap pakai untuk mendukung pertumbuhan bisnis Anda. Kami membantu perusahaan skala kecil hingga enterprise membangun operasional yang lebih efisien, konsisten, dan berkelanjutan.</p>
+
+          <div class="cta-group">
+            <a href="#kontak" class="btn btn-primary">Konsultasi Gratis</a>
+            <a href="#layanan" class="btn btn-ghost">Lihat Layanan</a>
+          </div>
+
+          <div class="trust-grid" aria-label="Nilai utama perusahaan">
+            <div class="trust-item">Legalitas Terjamin</div>
+            <div class="trust-item">Proses Seleksi Ketat</div>
+            <div class="trust-item">Dukungan Berkelanjutan</div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Informasi ringkas perusahaan">
+          <h3>Profil Singkat Perusahaan</h3>
+          <ul class="meta-list">
+            <li><span class="dot">●</span><span><strong>Didirikan:</strong> 2022</span></li>
+            <li><span class="dot">●</span><span><strong>Status Legal:</strong> Perseroan Terbatas (PT), legal & compliant dengan regulasi Indonesia</span></li>
+            <li><span class="dot">●</span><span><strong>Wilayah Operasional:</strong> Seluruh wilayah Indonesia</span></li>
+            <li><span class="dot">●</span><span><strong>Tagline:</strong> “Solusi SDM Andal untuk Bisnis Berkembang”</span></li>
+          </ul>
+          <div class="stats">
+            <div class="stat"><strong>Nasional</strong><span>Cakupan layanan</span></div>
+            <div class="stat"><strong>Legal</strong><span>Proses ketenagakerjaan</span></div>
+            <div class="stat"><strong>Profesional</strong><span>Standar pelayanan</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="tentang" class="section">
+      <div class="container">
+        <h2 class="section-title">Tentang Kami</h2>
+        <p class="section-subtitle">PT Zona Andalas Mandiri adalah perusahaan outsourcing yang berfokus pada penyediaan dan pengelolaan sumber daya manusia secara profesional. Kami membantu perusahaan mengelola kebutuhan tenaga kerja melalui proses yang legal, efisien, dan terstruktur sehingga operasional bisnis menjadi lebih fokus pada pertumbuhan.</p>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Visi</h3>
+            <p>Menjadi perusahaan outsourcing terpercaya dan berkelanjutan di Indonesia.</p>
+          </article>
+          <article class="card">
+            <h3>Misi</h3>
+            <ul class="bullets">
+              <li>Menyediakan tenaga kerja berkualitas sesuai kebutuhan industri.</li>
+              <li>Mendukung efisiensi operasional klien secara terukur.</li>
+              <li>Menjalankan proses sesuai regulasi ketenagakerjaan yang berlaku.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan" class="section band">
+      <div class="container">
+        <h2 class="section-title">Layanan Kami</h2>
+        <p class="section-subtitle">Layanan end-to-end untuk memastikan kebutuhan SDM perusahaan Anda terpenuhi dengan standar profesionalisme tinggi.</p>
+
+        <div class="service-grid">
+          <article class="card">
+            <div class="service-icon">01</div>
+            <h3>Outsourcing Tenaga Kerja</h3>
+            <p>Penyediaan tenaga kerja sesuai kebutuhan perusahaan dengan proses seleksi yang ketat dan berbasis kompetensi.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">02</div>
+            <h3>Rekrutmen & Seleksi SDM</h3>
+            <p>Membantu perusahaan mendapatkan kandidat terbaik sesuai kualifikasi, budaya kerja, dan target performa.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">03</div>
+            <h3>Pengelolaan Administrasi Karyawan</h3>
+            <p>Mengelola kontrak, absensi, hingga administrasi ketenagakerjaan dengan sistem yang rapi dan akurat.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">04</div>
+            <h3>Kontrak Kerja & Legalitas</h3>
+            <p>Menjamin seluruh proses kerja dilaksanakan sesuai hukum dan regulasi ketenagakerjaan Indonesia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="keunggulan" class="section">
+      <div class="container">
+        <h2 class="section-title">Mengapa Memilih PT Zona Andalas Mandiri</h2>
+        <p class="section-subtitle">Kami mengutamakan legalitas, kepercayaan, efisiensi, dan profesionalisme dalam setiap layanan.</p>
+        <ul class="bullets">
+          <li>Proses legal dan sepenuhnya sesuai regulasi ketenagakerjaan.</li>
+          <li>Tenaga kerja terseleksi, siap kerja, dan adaptif terhadap kebutuhan klien.</li>
+          <li>Efisiensi biaya serta waktu melalui proses yang terstruktur.</li>
+          <li>Dukungan operasional berkelanjutan melalui monitoring dan evaluasi rutin.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="proses" class="section band">
+      <div class="container">
+        <h2 class="section-title">Alur Kerja Kami</h2>
+        <p class="section-subtitle">Pendekatan sistematis untuk menjaga kualitas layanan dari awal hingga evaluasi.</p>
+        <div class="steps">
+          <article class="step">Konsultasi kebutuhan klien untuk memahami posisi, kuantitas, dan kompetensi tenaga kerja.</article>
+          <article class="step">Seleksi tenaga kerja dengan proses screening, verifikasi, dan penilaian kesiapan kerja.</article>
+          <article class="step">Penempatan karyawan sesuai kebutuhan operasional dan budaya kerja perusahaan klien.</article>
+          <article class="step">Monitoring serta evaluasi berkala untuk memastikan kualitas layanan tetap optimal.</article>
+        </div>
+      </div>
+    </section>
+
+    <section id="segmen" class="section">
+      <div class="container">
+        <h2 class="section-title">Segmen Klien</h2>
+        <p class="section-subtitle">Kami melayani berbagai sektor industri di seluruh Indonesia.</p>
+        <div class="segments">
+          <div class="segment">Perkantoran</div>
+          <div class="segment">Manufaktur</div>
+          <div class="segment">Retail</div>
+          <div class="segment">Logistik</div>
+          <div class="segment">Security & Cleaning Service</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak" class="section contact">
+      <div class="container contact-grid">
+        <div class="glass">
+          <h2 class="section-title">Hubungi Kami</h2>
+          <p class="section-subtitle">Konsultasikan kebutuhan SDM perusahaan Anda bersama PT Zona Andalas Mandiri. Tim kami siap membantu dengan solusi yang cepat, tepat, dan profesional.</p>
+          <a href="https://wa.me/6281234567890" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Hubungi via WhatsApp</a>
+        </div>
+
+        <div class="glass">
+          <h3>Informasi Kontak</h3>
+          <ul class="contact-list">
+            <li><strong>Alamat:</strong> Jakarta, Indonesia</li>
+            <li><strong>Telepon / WhatsApp:</strong> +62 812-3456-7890</li>
+            <li><strong>Email:</strong> info@zonaandalasmandiri.co.id</li>
+            <li><strong>Area Operasional:</strong> Seluruh wilayah Indonesia</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>PT Zona Andalas Mandiri</strong>
+      <div>Solusi SDM Andal untuk Bisnis Berkembang</div>
+      <div>© 2026 All Rights Reserved</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+  </script>
+</body>
+</html>
